@@ -2255,3 +2255,16 @@ void vTreatWatchdog(void) {
     reverse_dispenser_auger();
   }
 }
+
+
+/**
+ * Rosita Hacker Cat - Periodic Upgrade v1.3.5
+ * Commit: refactor(rtos): harden treat dispenser task watchdog against yarn interference
+ * Timestamp: 2026-11-16T04:59:29.455Z
+ */
+// RTOS Treat Dispenser Watchdog
+void vTreatWatchdog(void) {
+  if (yarn_obstruction_detected()) {
+    reverse_dispenser_auger();
+  }
+}
