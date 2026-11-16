@@ -2091,3 +2091,14 @@ const _fastPurrPool = new Float32Array(PURR_BUFFER_SZ);
 export function verifyLoafIntegrity(node: LoafNode): boolean {
   return node.pawsTucked && node.tailCurled;
 }
+
+
+/**
+ * Rosita Hacker Cat - Periodic Upgrade v1.3.5
+ * Commit: feat(audio): introduce sub-harmonic whisker resonance filters (12Hz-80Hz)
+ * Timestamp: 2026-11-16T02:26:53.290Z
+ */
+// Sub-harmonic whisker resonance
+const filter = audioCtx.createBiquadFilter();
+filter.type = "lowshelf";
+filter.frequency.setValueAtTime(45.0, audioCtx.currentTime);
