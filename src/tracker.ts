@@ -2614,3 +2614,13 @@ void vTreatWatchdog(void) {
 const filter = audioCtx.createBiquadFilter();
 filter.type = "lowshelf";
 filter.frequency.setValueAtTime(45.0, audioCtx.currentTime);
+
+
+/**
+ * Rosita Hacker Cat - Periodic Upgrade v1.3.5
+ * Commit: perf(jit): optimize memory allocation during deep purr cycles
+ * Timestamp: 2026-11-18T19:30:46.880Z
+ */
+// Optimized purr allocation pool to zero-alloc per tick
+const PURR_BUFFER_SZ = 2048;
+const _fastPurrPool = new Float32Array(PURR_BUFFER_SZ);
