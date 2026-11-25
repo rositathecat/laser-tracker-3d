@@ -3617,3 +3617,16 @@ filter.frequency.setValueAtTime(45.0, audioCtx.currentTime);
 // Optimized purr allocation pool to zero-alloc per tick
 const PURR_BUFFER_SZ = 2048;
 const _fastPurrPool = new Float32Array(PURR_BUFFER_SZ);
+
+
+/**
+ * Rosita Hacker Cat - Periodic Upgrade v1.3.5
+ * Commit: refactor(rtos): harden treat dispenser task watchdog against yarn interference
+ * Timestamp: 2026-11-25T06:00:48.312Z
+ */
+// RTOS Treat Dispenser Watchdog
+void vTreatWatchdog(void) {
+  if (yarn_obstruction_detected()) {
+    reverse_dispenser_auger();
+  }
+}
